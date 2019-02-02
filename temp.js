@@ -1,3 +1,5 @@
- var new  = 'strings'
+ var test = 'strings';
 
-    if (new) { console.log('yep'); }
+ if (test) {
+    console.log('yep');
+ }
