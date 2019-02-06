@@ -32,9 +32,15 @@
 ## Resources
 
 [Express Handlebars](https://github.com/ericf/express-handlebars)
+
 [Sequelize](http://docs.sequelizejs.com/)
+
 [EsLint](https://eslint.org/)
+
 [Travis CI](https://travis-ci.org/)
+
 [Passport JS](http://www.passportjs.org/)
+
 [Mocha JS](https://mochajs.org/)
+
 [Chai JS](https://www.chaijs.com/)
