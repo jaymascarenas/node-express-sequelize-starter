@@ -9,6 +9,7 @@ module.exports = app => {
       if (req.user) {
         logout = true;
       }
+      console.log(req.user);
       res.render("index", {
         msg: "Welcome!",
         // PASSPORT: logout will be true or false if user is logged in
@@ -21,7 +22,12 @@ module.exports = app => {
   // Load example page and pass in an example by id
   app.get("/example/:id", (req, res) => {
     db.Example.findOne({ where: { id: req.params.id } }).then(dbExample => {
+      let logout = false;
+      if (req.user) {
+        logout = true;
+      }
       res.render("example", {
+        logout: logout,
         example: dbExample
       });
     });

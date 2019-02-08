@@ -2,7 +2,13 @@
 module.exports = (app, passport) => {
   // Load sign up page for authentication
   app.get("/signup", (req, res) => {
-    res.render("signup");
+    let logout = false;
+    if (req.user) {
+      logout = true;
+    }
+    res.render("signup", {
+      logout: logout
+    });
   });
 
   // Sends sign up data through the passport authentication model which will redirect to the dashboard or to the signup route
@@ -16,7 +22,13 @@ module.exports = (app, passport) => {
 
   // Load sign in page for authentication
   app.get("/signin", (req, res) => {
-    res.render("signin");
+    let logout = false;
+    if (req.user) {
+      logout = true;
+    }
+    res.render("signin", {
+      logout: logout
+    });
   });
 
   // Sends signin to passport the authentication method and redirects based on it's result
@@ -40,7 +52,13 @@ module.exports = (app, passport) => {
 
   // Load dashboard page after authentication
   app.get("/dashboard", isLoggedIn, (req, res) => {
-    res.render("dashboard");
+    let logout = false;
+    if (req.user) {
+      logout = true;
+    }
+    res.render("dashboard", {
+      logout: logout
+    });
   });
 
   // Passport function that checks if the user is logged in or not.  If not then it redirects them to the signin page

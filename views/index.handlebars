@@ -2,15 +2,6 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <div class="col-4 float-right">
-
-          {{!-- PASSPORT: if logout is true then show logout button if not show signin/signup button --}}
-          {{#if logout}}
-          <a href="/logout">Logout</a>
-          {{else}}
-          <a href="/signin">Sign In</a>|<a href="/signup">Sign Up</a>
-          {{/if}}
-        </div>
         <h1>{{msg}}</h1>
         <h2>This is our Home Page!</h2>
         <form class="clearfix mb-4" action="POST">
